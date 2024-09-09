@@ -49,7 +49,7 @@ wss.on("connection", (ws) => {
 
       // Notify all admins about the updated usersData after the user disconnects
       Object.values(admins).forEach((admin) =>
-        admin.send(JSON.stringify(usersData))
+        admin.send(JSON.stringify(Object.values(usersData)))
       );
     }
   });
